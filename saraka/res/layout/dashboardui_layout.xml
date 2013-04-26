@@ -1,0 +1,59 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DashboardUI" >
+
+    <LinearLayout
+        android:id="@+id/header_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <include layout="@layout/header_bar_layout" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/navigation_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header_bar" >
+
+        <include layout="@layout/navigation_bar_layout" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dashboard_list_dv"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/navigation_bar"
+        android:background="@null"
+        android:orientation="vertical" >
+
+        <ListView
+            android:id="@+id/dashboard_list_view"
+            style="@style/ListProperties" >
+        </ListView>
+    </LinearLayout>
+    
+    
+   <!--  <LinearLayout
+        android:id="@+id/dashboard_list_dv"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/navigation_bar"
+        android:background="@null"
+        android:orientation="vertical"
+        android:weightSum="1" >
+
+        <ListView
+            android:id="@+id/dashboard_list_view"
+            style="@style/ListProperties" >
+        </ListView>
+        <include layout="@layout/bottom_layout" />
+    </LinearLayout> 
+    
+       <item name="android:layout_weight">0.2</item>-->
+
+</RelativeLayout>

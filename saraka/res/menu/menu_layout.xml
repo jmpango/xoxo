@@ -1,0 +1,35 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/about_ug_buddy"
+        android:icon="@drawable/menu_ug_buddy"
+        android:showAsAction="ifRoom|withText"
+        android:title="UG BUDDY"/>
+    <item
+        android:id="@+id/about_update"
+        android:icon="@drawable/menu_update"
+        android:showAsAction="ifRoom|withText"
+        android:title="UPDATE"/>
+    <item
+        android:id="@+id/about_ug"
+        android:icon="@drawable/menu_uganda"
+        android:showAsAction="ifRoom|withText"
+        android:title="UGANDA"/>
+    <item
+        android:id="@+id/important_numbers"
+        android:icon="@drawable/menu_important_number"
+        android:showAsAction="ifRoom|withText"
+        android:title="IMPORTANT NUMBERS"/>
+    <item
+        android:id="@+id/practical_info"
+        android:icon="@drawable/menu_practical_info"
+        android:showAsAction="ifRoom|withText"
+        android:title="PRACTICAL INFO"/>
+    <item
+        android:id="@+id/help"
+        android:icon="@drawable/menu_help"
+        android:showAsAction="ifRoom|withText"
+        android:title="HELP"/>
+
+
+</menu>

@@ -1,0 +1,18 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bottombar"
+    style="@style/BottomBar"
+    android:layout_alignParentBottom="true"
+    android:gravity="center"
+    android:padding="6dp" >
+    
+    <LinearLayout
+        android:id="@+id/advert_div"
+        style="@style/advertDiv">
+
+        <TextView
+            android:id="@+id/advert_title"
+            style="@style/advertTitle" />
+
+</LinearLayout>
+
+</FrameLayout>
