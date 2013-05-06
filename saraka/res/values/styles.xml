@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- Actionbar -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <style name="ActionBar">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/action_bar_background</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- Logo -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <style name="Logo">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:src">@drawable/ic_logo</item>
+        <item name="android:layout_marginLeft">3dp</item>
+    </style>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- Quick Search -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <style name="QuickSearchEditText">
+        <item name="android:cursorVisible">true</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:background">@drawable/editext_leftround_border</item>
+        <item name="android:hint">@string/quck_search_text_hint</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">@dimen/quick_search_text_size</item>
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textColor">@color/default_text_color</item>
+    </style>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- Quick Search Button -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <style name="QuickSearchButton">
+        <item name="android:padding">5dp</item>
+        <item name="android:background">@drawable/editext_rightround_border</item>
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:layout_marginLeft">-5dp</item>
+        <item name="android:src">@android:drawable/ic_menu_search</item>
+    </style>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- Action Bar Button -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <style name="ActionbarButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">2dp</item>
+        <item name="android:scaleType">center</item>
+        <item name="android:background">@null</item>
+    </style>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- Navigation Bar -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <style name="NavicationBar">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/navication_bar_bg</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- Navigation Page Name -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <style name="NavigationPageLabel">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">3dp</item>
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:text">@string/default_navication_page_label_text</item>
+        <item name="android:textSize">@dimen/page_font_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- List Search -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <style name="ListSearchEditText">
+        <item name="android:cursorVisible">true</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:background">@drawable/editext_leftround_border</item>
+        <item name="android:hint">@string/list_search_text_hint</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">@dimen/quick_search_text_size</item>
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:textColor">@color/default_text_color</item>
+    </style>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- Buttom Bar -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <style name="BottomBar">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@drawable/bottom_bar_background</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- List Properties -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <style name="ListProperties">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:divider">@color/list_divider_color</item>
+        <item name="android:dividerHeight">1dp</item>
+        <item name="android:listSelector">@drawable/list_selector_background</item>
+    </style>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- UpdateUI Properties -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <style name="updateUi">
+        <item name="android:background">@drawable/action_bar_background</item>
+    </style>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- UpdateUILogo Properties -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <style name="updateUiLogo">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:src">@drawable/ic_splash</item>
+        <item name="android:layout_margin">@dimen/update_logo_margin</item>
+    </style>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- UpdateUiDownloadBtn Properties -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <style name="updateUiDownloadBtn">
+        <item name="android:layout_width">250dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:text">@string/download_button_text</item>
+    </style>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- UpdateUiBackBtn Properties -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <style name="updateUiBackBtn">
+        <item name="android:layout_width">250dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:text">@string/download_button_cancel_text</item>
+    </style>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- UpdateTitle Properties -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <style name="updateTitle">
+        <item name="android:textColor">@color/default_update_text_color</item>
+        <item name="android:text">@string/update_title</item>
+        <item name="android:textSize">@dimen/update_title_size</item>
+        <item name="android:layout_margin">5dp</item>
+    </style>
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- Advert Div Properties -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <style name="advertDiv">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:textColor">@color/default_advert_text_color</item>
+        <item name="android:textSize">@dimen/advert_text_size</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@color/advert_bg_color</item>
+    </style>
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- Advert Title Properties -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <style name="advertTitle">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:textColor">@color/default_advert_title_text_color</item>
+        <item name="android:textSize">@dimen/advert_text_size</item>
+        <item name="android:text">@string/advert_title_text</item>
+        <item name="android:layout_margin">5dp</item>
+    </style>
+</resources>
