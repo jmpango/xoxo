@@ -6,6 +6,8 @@ public class Usage {
 	int callHits;
 	int urlHits;
 	int emailHits;
+	int rateHits;
+	int commentHits;
 	int buddyId;
 
 	public Usage() {
@@ -13,13 +15,15 @@ public class Usage {
 	}
 
 	public Usage(int id, int pageHits, int callHits, int urlHits,
-			int emailHits, int buddyId) {
+			int emailHits, int buddyId, int commentHits, int rateHits) {
 		this.id = id;
 		this.pageHits = pageHits;
 		this.callHits = callHits;
 		this.urlHits = urlHits;
 		this.emailHits = emailHits;
 		this.buddyId = buddyId;
+		this.commentHits = commentHits;
+		this.rateHits = rateHits;
 	}
 
 	public int getId() {
@@ -70,4 +74,20 @@ public class Usage {
 		this.buddyId = buddyId;
 	}
 
+	public int getRateHits() {
+		return rateHits;
+	}
+
+	public void setRateHits(int rateHits) {
+		this.rateHits = rateHits;
+	}
+
+	public int getCommentHits() {
+		return commentHits;
+	}
+
+	public void setCommentHits(int commentHits) {
+		this.commentHits = commentHits;
+	}
+	
 }

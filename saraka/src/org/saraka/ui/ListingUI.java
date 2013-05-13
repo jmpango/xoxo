@@ -15,8 +15,10 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.EditText;
@@ -33,8 +35,10 @@ public class ListingUI extends BaseUI implements OnItemClickListener,
 	private List<Buddy> tempListingList;
 	private ListingSearchAsyncTask listingSearchAsyncTask;
 	private SearchService searchService;
+	private boolean isUpdateCalled = false;
 
 	protected void onCreate(Bundle savedInstanceState) {
+		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.listingui_layout);
 
@@ -131,7 +135,7 @@ public class ListingUI extends BaseUI implements OnItemClickListener,
 	public void onItemClick(AdapterView<?> parent, View view, int position,
 			long id) {
 		Buddy buddy = (Buddy) tempListingList.get(position);
-		Intent intent = new Intent(ListingUI.this, /*DetailUI.class*/null);
+		Intent intent = new Intent(ListingUI.this, DetailUI.class);
 		Bundle bundle = new Bundle();
 		bundle.putParcelable(Utils.DEFAULT_BUDDY, buddy);
 		intent.putExtras(bundle);
@@ -163,5 +167,28 @@ public class ListingUI extends BaseUI implements OnItemClickListener,
 	protected void onDestroy() {
 		ListingUI.this.finish();
 		super.onDestroy();
+	}
+	
+	@Override
+	protected void onResumeFragments() {
+		if(isUpdateCalled){
+			isUpdateCalled = false;
+		}
+		super.onResumeFragments();
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case R.id.about_update:
+			Intent intent = new Intent(ListingUI.this, UpdateUI.class);
+			isUpdateCalled = true;
+			startActivity(intent);
+			break;
+
+		default:
+			break;
+		}
+		return false;
 	}
 }

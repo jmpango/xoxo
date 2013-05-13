@@ -163,6 +163,8 @@ public class UpdateUI extends BaseUI {
 					childObj.put("callHit", usage.getCallHits() + "");
 					childObj.put("urlHit", usage.getUrlHits() + "");
 					childObj.put("emailHit", usage.getEmailHits() + "");
+					childObj.put("commentHit", usage.getCommentHits() + "");
+					childObj.put("rateHit", usage.getRateHits() + "");
 					childObj.put("buddyId", usage.getBuddyId() + "");
 
 					jsonArray.put(childObj);

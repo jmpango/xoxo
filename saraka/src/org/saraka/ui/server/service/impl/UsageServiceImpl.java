@@ -2,6 +2,8 @@ package org.saraka.ui.server.service.impl;
 
 import java.util.List;
 
+import org.saraka.ui.model.Comment;
+import org.saraka.ui.model.Rate;
 import org.saraka.ui.model.Usage;
 import org.saraka.ui.server.dao.UsageDAO;
 import org.saraka.ui.server.service.UsageService;
@@ -48,6 +50,56 @@ public class UsageServiceImpl implements UsageService{
 	@Override
 	public List<Usage> getAllUsage() {
 		return usageDAO.getAllUsage();
+	}
+
+	@Override
+	public List<Comment> getComments() {
+		return usageDAO.getComments();
+	}
+
+	@Override
+	public Comment getCommentByBuddyId(int buddyId) {
+		return usageDAO.getCommentByBuddyId(buddyId);
+	}
+
+	@Override
+	public List<Rate> getRate() {
+		return usageDAO.getRate();
+	}
+
+	@Override
+	public Rate getRateByBuddyId(int buddyId) {
+		return usageDAO.getRateByBuddyId(buddyId);
+	}
+
+	@Override
+	public void saveComment(Comment comment) {
+		usageDAO.saveComment(comment);
+	}
+
+	@Override
+	public void saveRate(Rate rate) {
+		usageDAO.saveRate(rate);
+	}
+
+	@Override
+	public void clearRate() {
+		usageDAO.clearRate();
+	}
+
+	@Override
+	public void clearComment() {
+		usageDAO.clearComment();
+	}
+
+	@Override
+	public void saveCommentHit(int buddyId) {
+		usageDAO.saveCommentHit(buddyId);
+	}
+
+	@Override
+	public void saveRateHit(int buddyId) {
+		usageDAO.saveRateHit(buddyId);
 	}
 
 }

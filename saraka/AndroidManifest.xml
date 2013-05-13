@@ -32,6 +32,7 @@
         <activity android:name="org.saraka.ui.DashboardUI" />
         <activity android:name="org.saraka.ui.UpdateUI" />
         <activity android:name="org.saraka.ui.ListingUI" />
+        <activity android:name="org.saraka.ui.DetailUI" />
     </application>
 
 </manifest>

@@ -14,8 +14,11 @@ public final class R {
         public static final int advert_bg_color=0x7f04000a;
         public static final int default_advert_text_color=0x7f040008;
         public static final int default_advert_title_text_color=0x7f040009;
+        public static final int default_detail_address_banner_color=0x7f04000d;
+        public static final int default_detail_text_color=0x7f04000c;
         public static final int default_text_color=0x7f040006;
         public static final int default_update_text_color=0x7f040007;
+        public static final int default_white=0x7f04000b;
         public static final int edittext_bkg_color=0x7f040000;
         public static final int list_divider_color=0x7f040002;
         public static final int list_separator_color=0x7f040001;
@@ -25,9 +28,15 @@ public final class R {
     }
     public static final class dimen {
         public static final int advert_text_size=0x7f050007;
+        public static final int default_detail_banner_font_size=0x7f05000b;
+        public static final int default_detail_font_size=0x7f05000c;
+        public static final int default_detail_image_height=0x7f05000d;
+        public static final int default_detail_text_font_size=0x7f05000a;
+        public static final int details_name_font_size=0x7f050009;
         public static final int list_view_name_font_size=0x7f050002;
         public static final int list_view_tagline_font_size=0x7f050003;
         public static final int nav_quick_search_text_size=0x7f050001;
+        public static final int nav_text_width=0x7f050008;
         public static final int page_font_size=0x7f050004;
         public static final int quick_search_text_size=0x7f050000;
         public static final int update_logo_margin=0x7f050006;
@@ -39,76 +48,121 @@ public final class R {
         public static final int action_bar_divider_white=0x7f020002;
         public static final int arrow=0x7f020003;
         public static final int bottom_bar_background=0x7f020004;
-        public static final int editext_leftround_border=0x7f020005;
-        public static final int editext_rightround_border=0x7f020006;
-        public static final int ic_home_button=0x7f020007;
-        public static final int ic_home_button_background=0x7f020008;
-        public static final int ic_home_button_pressed=0x7f020009;
-        public static final int ic_home_button_selected=0x7f02000a;
-        public static final int ic_icon=0x7f02000b;
-        public static final int ic_info=0x7f02000c;
-        public static final int ic_logo=0x7f02000d;
-        public static final int ic_nav_back_button=0x7f02000e;
-        public static final int ic_nav_back_button_background=0x7f02000f;
-        public static final int ic_nav_back_button_pressed=0x7f020010;
-        public static final int ic_nav_back_button_selected=0x7f020011;
-        public static final int ic_search_small=0x7f020012;
-        public static final int ic_splash=0x7f020013;
-        public static final int list_selector_background=0x7f020014;
-        public static final int list_selector_gradient_bg=0x7f020015;
-        public static final int list_selector_gradient_bg_hover=0x7f020016;
-        public static final int menu_help=0x7f020017;
-        public static final int menu_important_number=0x7f020018;
-        public static final int menu_practical_info=0x7f020019;
-        public static final int menu_ug_buddy=0x7f02001a;
-        public static final int menu_uganda=0x7f02001b;
-        public static final int menu_update=0x7f02001c;
-        public static final int navication_bar_background=0x7f02001d;
-        public static final int navication_bar_bg=0x7f02001e;
+        public static final int detail_buddy_content_background=0x7f020005;
+        public static final int detail_buddy_content_text_background=0x7f020006;
+        public static final int detail_buddy_image_background=0x7f020007;
+        public static final int editext_leftround_border=0x7f020008;
+        public static final int editext_rightround_border=0x7f020009;
+        public static final int ic_call=0x7f02000a;
+        public static final int ic_comment=0x7f02000b;
+        public static final int ic_email=0x7f02000c;
+        public static final int ic_home_button=0x7f02000d;
+        public static final int ic_home_button_background=0x7f02000e;
+        public static final int ic_home_button_pressed=0x7f02000f;
+        public static final int ic_home_button_selected=0x7f020010;
+        public static final int ic_icon=0x7f020011;
+        public static final int ic_info=0x7f020012;
+        public static final int ic_logo=0x7f020013;
+        public static final int ic_map=0x7f020014;
+        public static final int ic_nav_back_button=0x7f020015;
+        public static final int ic_nav_back_button_background=0x7f020016;
+        public static final int ic_nav_back_button_pressed=0x7f020017;
+        public static final int ic_nav_back_button_selected=0x7f020018;
+        public static final int ic_rate=0x7f020019;
+        public static final int ic_search_small=0x7f02001a;
+        public static final int ic_splash=0x7f02001b;
+        public static final int ic_url=0x7f02001c;
+        public static final int list_selector_background=0x7f02001d;
+        public static final int list_selector_gradient_bg=0x7f02001e;
+        public static final int list_selector_gradient_bg_hover=0x7f02001f;
+        public static final int menu_help=0x7f020020;
+        public static final int menu_important_number=0x7f020021;
+        public static final int menu_practical_info=0x7f020022;
+        public static final int menu_ug_buddy=0x7f020023;
+        public static final int menu_uganda=0x7f020024;
+        public static final int menu_update=0x7f020025;
+        public static final int navication_bar_background=0x7f020026;
+        public static final int navication_bar_bg=0x7f020027;
     }
     public static final class id {
-        public static final int about_ug=0x7f090026;
-        public static final int about_ug_buddy=0x7f090024;
-        public static final int about_update=0x7f090025;
-        public static final int actionbar=0x7f09000a;
-        public static final int actionbarpanel=0x7f09000c;
+        public static final int about_ug=0x7f09004a;
+        public static final int about_ug_buddy=0x7f090048;
+        public static final int about_update=0x7f090049;
+        public static final int actionbar=0x7f090031;
+        public static final int actionbarpanel=0x7f09000b;
         public static final int advert_div=0x7f090004;
         public static final int advert_title=0x7f090005;
         public static final int bottombar=0x7f090003;
+        public static final int buddy_image_div=0x7f09000d;
+        public static final int buddy_name_tagline_dv=0x7f090018;
+        public static final int comment_btn=0x7f090014;
         public static final int dashboard_list_dv=0x7f090008;
         public static final int dashboard_list_view=0x7f090009;
+        public static final int detail_content_dv=0x7f09000e;
+        public static final int detail_content_scrolbar=0x7f090016;
+        public static final int detail_icon_scrolbar=0x7f09000f;
+        public static final int details_address_banner_text=0x7f09001c;
+        public static final int details_address_dv=0x7f09001b;
+        public static final int details_addresss=0x7f09001d;
+        public static final int details_call_btn=0x7f090011;
+        public static final int details_content_display=0x7f090017;
+        public static final int details_email=0x7f090029;
+        public static final int details_email_banner_text=0x7f090028;
+        public static final int details_email_btn=0x7f090012;
+        public static final int details_email_dv=0x7f090027;
+        public static final int details_fax=0x7f090023;
+        public static final int details_fax_banner_text=0x7f090022;
+        public static final int details_fax_dv=0x7f090021;
+        public static final int details_icon_dv=0x7f090010;
+        public static final int details_location=0x7f09002c;
+        public static final int details_location_banner_text=0x7f09002b;
+        public static final int details_location_dv=0x7f09002a;
+        public static final int details_name=0x7f090019;
+        public static final int details_tagline=0x7f09001a;
+        public static final int details_telphone=0x7f090020;
+        public static final int details_telphone_banner_text=0x7f09001f;
+        public static final int details_telphone_dv=0x7f09001e;
+        public static final int details_url=0x7f090026;
+        public static final int details_url_banner_text=0x7f090025;
+        public static final int details_url_dv=0x7f090024;
+        public static final int email_btn_cancel=0x7f090030;
+        public static final int email_btn_send=0x7f09002f;
         public static final int header_bar=0x7f090006;
-        public static final int help=0x7f090029;
-        public static final int home_btn=0x7f09000f;
-        public static final int imageView1=0x7f090019;
-        public static final int important_numbers=0x7f090027;
-        public static final int list_search_box=0x7f090016;
-        public static final int listing_list_dv=0x7f090010;
-        public static final int listing_list_view=0x7f090011;
-        public static final int listing_name=0x7f090012;
-        public static final int listing_tagline=0x7f090013;
-        public static final int logo=0x7f09000b;
+        public static final int help=0x7f09004d;
+        public static final int home_btn=0x7f090035;
+        public static final int imageView1=0x7f09003d;
+        public static final int important_numbers=0x7f09004b;
+        public static final int list_search_box=0x7f09003b;
+        public static final int listing_list_dv=0x7f090036;
+        public static final int listing_list_view=0x7f090037;
+        public static final int listing_name=0x7f090038;
+        public static final int listing_tagline=0x7f090039;
+        public static final int logo=0x7f090032;
         public static final int name=0x7f090001;
-        public static final int nav_back_button=0x7f090017;
-        public static final int nav_page_label=0x7f090015;
+        public static final int nav_back_button=0x7f09000c;
+        public static final int nav_page_label=0x7f09000a;
         public static final int navigation_bar=0x7f090007;
-        public static final int navigationbar=0x7f090014;
+        public static final int navigationbar=0x7f09003a;
         public static final int next_image=0x7f090000;
-        public static final int practical_info=0x7f090028;
-        public static final int quick_search_btn=0x7f09000e;
-        public static final int search_box=0x7f09000d;
-        public static final int splashScreen_dv=0x7f090018;
+        public static final int practical_info=0x7f09004c;
+        public static final int quick_search_btn=0x7f090034;
+        public static final int rateme_btn=0x7f090015;
+        public static final int search_box=0x7f090033;
+        public static final int splashScreen_dv=0x7f09003c;
         public static final int tagline=0x7f090002;
-        public static final int updateTitleText=0x7f09001d;
-        public static final int update_back_btn=0x7f090023;
-        public static final int update_download_btn=0x7f090022;
-        public static final int update_download_text=0x7f09001f;
-        public static final int update_logo_div=0x7f09001b;
-        public static final int update_progress_text=0x7f090020;
-        public static final int update_progressbar=0x7f09001e;
-        public static final int update_text_div=0x7f09001c;
-        public static final int updateui_button_dv=0x7f090021;
-        public static final int updateui_dv=0x7f09001a;
+        public static final int txtemail_message=0x7f09002e;
+        public static final int txtemail_subject=0x7f09002d;
+        public static final int updateTitleText=0x7f090041;
+        public static final int update_back_btn=0x7f090047;
+        public static final int update_download_btn=0x7f090046;
+        public static final int update_download_text=0x7f090043;
+        public static final int update_logo_div=0x7f09003f;
+        public static final int update_progress_text=0x7f090044;
+        public static final int update_progressbar=0x7f090042;
+        public static final int update_text_div=0x7f090040;
+        public static final int updateui_button_dv=0x7f090045;
+        public static final int updateui_dv=0x7f09003e;
+        public static final int visit_website_btn=0x7f090013;
     }
     public static final class layout {
         public static final int actionbar_divider_white=0x7f030000;
@@ -116,27 +170,47 @@ public final class R {
         public static final int bottom_layout=0x7f030002;
         public static final int dashboardui_layout=0x7f030003;
         public static final int dashboardui_row_tpl=0x7f030004;
-        public static final int header_bar_layout=0x7f030005;
-        public static final int listingui_layout=0x7f030006;
-        public static final int listingui_row_tpl=0x7f030007;
-        public static final int navigation_bar_layout=0x7f030008;
-        public static final int splashscreenui_layout=0x7f030009;
-        public static final int updateui_layout=0x7f03000a;
+        public static final int detailui_layout=0x7f030005;
+        public static final int email_dialog_layout=0x7f030006;
+        public static final int header_bar_layout=0x7f030007;
+        public static final int listingui_layout=0x7f030008;
+        public static final int listingui_row_tpl=0x7f030009;
+        public static final int navigation_bar_layout=0x7f03000a;
+        public static final int splashscreenui_layout=0x7f03000b;
+        public static final int updateui_layout=0x7f03000c;
     }
     public static final class menu {
         public static final int menu_layout=0x7f080000;
     }
     public static final class string {
         public static final int advert_title_text=0x7f06000e;
+        public static final int cancel_btn_text=0x7f060022;
         public static final int default_content_description=0x7f060000;
         public static final int default_dashboard_item_name=0x7f060004;
         public static final int default_dashboard_item_tagline=0x7f060005;
+        public static final int default_detail_address_banner=0x7f060013;
+        public static final int default_detail_address_text=0x7f060014;
+        public static final int default_detail_email_banner=0x7f06001b;
+        public static final int default_detail_email_text=0x7f06001c;
+        public static final int default_detail_fax_banner=0x7f060017;
+        public static final int default_detail_fax_text=0x7f060018;
+        public static final int default_detail_location_banner=0x7f06001d;
+        public static final int default_detail_location_text=0x7f06001e;
+        public static final int default_detail_name=0x7f060011;
+        public static final int default_detail_tagline=0x7f060012;
+        public static final int default_detail_telphone_banner=0x7f060015;
+        public static final int default_detail_telphone_text=0x7f060016;
+        public static final int default_detail_url_banner=0x7f060019;
+        public static final int default_detail_url_text=0x7f06001a;
+        public static final int default_email_subject_text=0x7f06001f;
+        public static final int default_email_text=0x7f060020;
         public static final int default_listing_item_name=0x7f06000f;
         public static final int default_listing_item_tagline=0x7f060010;
         public static final int default_navication_page_label_text=0x7f060002;
         public static final int download_button_cancel_text=0x7f06000d;
         public static final int download_button_text=0x7f06000c;
         public static final int download_text=0x7f06000a;
+        public static final int email_send_btn_text=0x7f060021;
         public static final int list_search_text_hint=0x7f060003;
         public static final int ok=0x7f060008;
         public static final int progress_text=0x7f06000b;
@@ -296,6 +370,26 @@ public final class R {
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
          */
         public static final int advertTitle=0x7f070010;
+        /**  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+ Buddy Image Properties 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+         */
+        public static final int buddyImage=0x7f070011;
+        /**  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+ Detail's Content Properties 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+         */
+        public static final int detailContent=0x7f070012;
+        /**  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+ Detail's Content Display Properties 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+         */
+        public static final int detailDisplayContent=0x7f070014;
+        /**  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+ Detail's Icon Properties 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+         */
+        public static final int detailIcons=0x7f070013;
         /**  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
  UpdateTitle Properties 
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 

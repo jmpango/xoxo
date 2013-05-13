@@ -8,4 +8,10 @@
     <dimen name="update_title_size">20dp</dimen>
     <dimen name="update_logo_margin">20dp</dimen>
     <dimen name="advert_text_size">15dp</dimen>
+    <dimen name="nav_text_width">100dp</dimen>
+    <dimen name="details_name_font_size">15dp</dimen>
+    <dimen name="default_detail_text_font_size">13dp</dimen>
+    <dimen name="default_detail_banner_font_size">13dp</dimen>
+    <dimen name="default_detail_font_size">10dp</dimen>
+    <dimen name="default_detail_image_height">100dp</dimen>
 </resources>

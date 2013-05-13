@@ -3,6 +3,8 @@ package org.saraka.ui.server.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.saraka.ui.model.Comment;
+import org.saraka.ui.model.Rate;
 import org.saraka.ui.model.Usage;
 
 import android.content.ContentValues;
@@ -21,7 +23,7 @@ public class UsageDAO extends BaseDAO {
 		Usage usage = null;
 		SQLiteDatabase db = this.dbOpen();
 		Cursor cursor = db.query(USAGE_TABLE, new String[] { "id", "page_hits",
-				"call_hits", "url_hits", "email_hits", "buddy_id" },
+				"call_hits", "url_hits", "email_hits","comment_hits","rate_hits", "buddy_id" },
 				"buddy_id = ?", new String[] { String.valueOf(buddyId) }, null,
 				null, null);
 
@@ -32,7 +34,9 @@ public class UsageDAO extends BaseDAO {
 						Integer.parseInt(cursor.getString(2)),
 						Integer.parseInt(cursor.getString(3)),
 						Integer.parseInt(cursor.getString(4)),
-						Integer.parseInt(cursor.getString(5)));
+						Integer.parseInt(cursor.getString(7)),
+						Integer.parseInt(cursor.getString(5)),
+						Integer.parseInt(cursor.getString(6)));
 			}
 		}
 
@@ -50,6 +54,8 @@ public class UsageDAO extends BaseDAO {
 			values.put("call_hits", String.valueOf(0));
 			values.put("url_hits", String.valueOf(0));
 			values.put("email_hits", String.valueOf(0));
+			values.put("comment_hits", String.valueOf(0));
+			values.put("rate_hits", String.valueOf(0));
 			values.put("buddy_id", String.valueOf(buddyId));
 
 			SQLiteDatabase db = this.dbOpen();
@@ -81,6 +87,8 @@ public class UsageDAO extends BaseDAO {
 			values.put("call_hits", String.valueOf(1));
 			values.put("url_hits", String.valueOf(0));
 			values.put("email_hits", String.valueOf(0));
+			values.put("comment_hits", String.valueOf(0));
+			values.put("rate_hits", String.valueOf(0));
 			values.put("buddy_id", String.valueOf(buddyId));
 
 			SQLiteDatabase db = this.dbOpen();
@@ -112,6 +120,8 @@ public class UsageDAO extends BaseDAO {
 			values.put("call_hits", String.valueOf(0));
 			values.put("url_hits", String.valueOf(1));
 			values.put("email_hits", String.valueOf(0));
+			values.put("comment_hits", String.valueOf(0));
+			values.put("rate_hits", String.valueOf(0));
 			values.put("buddy_id", String.valueOf(buddyId));
 
 			SQLiteDatabase db = this.dbOpen();
@@ -143,6 +153,8 @@ public class UsageDAO extends BaseDAO {
 			values.put("call_hits", String.valueOf(0));
 			values.put("url_hits", String.valueOf(0));
 			values.put("email_hits", String.valueOf(1));
+			values.put("comment_hits", String.valueOf(0));
+			values.put("rate_hits", String.valueOf(0));
 			values.put("buddy_id", String.valueOf(buddyId));
 
 			SQLiteDatabase db = this.dbOpen();
@@ -187,7 +199,9 @@ public class UsageDAO extends BaseDAO {
 				usage.setCallHits(Integer.parseInt(cursor.getString(2)));
 				usage.setUrlHits(Integer.parseInt(cursor.getString(3)));
 				usage.setEmailHits(Integer.parseInt(cursor.getString(4)));
-				usage.setBuddyId(Integer.parseInt(cursor.getString(5)));
+				usage.setCommentHits(Integer.parseInt(cursor.getString(5)));
+				usage.setRateHits(Integer.parseInt(cursor.getString(6)));
+				usage.setBuddyId(Integer.parseInt(cursor.getString(7)));
 
 				usageList.add(usage);
 			} while (cursor.moveToNext());
@@ -197,6 +211,113 @@ public class UsageDAO extends BaseDAO {
 		this.dbClose(db);
 
 		return usageList;
+	}
+
+	public List<Comment> getComments() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Comment getCommentByBuddyId(int buddyId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<Rate> getRate() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Rate getRateByBuddyId(int buddyId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void saveComment(Comment comment) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void saveRate(Rate rate) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void clearRate() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void clearComment() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void saveCommentHit(int buddyId) {
+		Usage usage = getBuddyUsage(buddyId);
+		if (usage == null) {
+			ContentValues values = new ContentValues();
+			values.put("page_hits", String.valueOf(0));
+			values.put("call_hits", String.valueOf(0));
+			values.put("url_hits", String.valueOf(0));
+			values.put("email_hits", String.valueOf(0));
+			values.put("comment_hits", String.valueOf(1));
+			values.put("rate_hits", String.valueOf(0));
+			values.put("buddy_id", String.valueOf(buddyId));
+
+			SQLiteDatabase db = this.dbOpen();
+			db.insert(USAGE_TABLE, null, values);
+
+			values.clear();
+			values = null;
+
+			this.dbClose(db);
+		} else {
+			ContentValues values = new ContentValues();
+			values.put("comment_hits", String.valueOf(usage.getCommentHits() + 1));
+
+			SQLiteDatabase db = this.dbOpen();
+			db.update(USAGE_TABLE, values, "buddy_id = ?",
+					new String[] { String.valueOf(buddyId) });
+			values.clear();
+			values = null;
+
+			this.dbClose(db);
+		}
+		
+	}
+
+	public void saveRateHit(int buddyId) {
+		Usage usage = getBuddyUsage(buddyId);
+		if (usage == null) {
+			ContentValues values = new ContentValues();
+			values.put("page_hits", String.valueOf(0));
+			values.put("call_hits", String.valueOf(0));
+			values.put("url_hits", String.valueOf(0));
+			values.put("email_hits", String.valueOf(0));
+			values.put("comment_hits", String.valueOf(0));
+			values.put("rate_hits", String.valueOf(1));
+			values.put("buddy_id", String.valueOf(buddyId));
+
+			SQLiteDatabase db = this.dbOpen();
+			db.insert(USAGE_TABLE, null, values);
+
+			values.clear();
+			values = null;
+
+			this.dbClose(db);
+		} else {
+			ContentValues values = new ContentValues();
+			values.put("rate_hits", String.valueOf(usage.getRateHits() + 1));
+
+			SQLiteDatabase db = this.dbOpen();
+			db.update(USAGE_TABLE, values, "buddy_id = ?",
+					new String[] { String.valueOf(buddyId) });
+			values.clear();
+			values = null;
+
+			this.dbClose(db);
+		}
 	}
 
 }

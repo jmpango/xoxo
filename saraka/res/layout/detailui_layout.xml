@@ -1,0 +1,341 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="top"
+    tools:context=".DetailUI" >
+
+    <LinearLayout
+        android:id="@+id/header_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <include layout="@layout/header_bar_layout" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/navigation_bar"
+        style="@style/NavicationBar"
+        android:layout_below="@+id/header_bar" >
+
+        <TextView
+            android:id="@+id/nav_page_label"
+            style="@style/NavigationPageLabel" />
+
+        <include layout="@layout/actionbar_divider_white" />
+
+        <LinearLayout
+            android:id="@+id/actionbarpanel"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right|center" >
+
+            <ImageButton
+                android:id="@+id/nav_back_button"
+                style="@style/ActionbarButton"
+                android:contentDescription="@string/default_content_description"
+                android:src="@drawable/ic_nav_back_button_background" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/buddy_image_div"
+        style="@style/buddyImage" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/detail_content_dv"
+        style="@style/detailContent" >
+
+        <ScrollView
+            android:id="@+id/detail_icon_scrolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@null" >
+
+            <LinearLayout
+                android:id="@+id/details_icon_dv"
+                style="@style/detailIcons" >
+
+                <ImageButton
+                    android:id="@+id/details_call_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dip"
+                    android:background="@null"
+                    android:contentDescription="@string/default_content_description"
+                    android:src="@drawable/ic_call" />
+
+                <ImageButton
+                    android:id="@+id/details_email_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dip"
+                    android:background="@null"
+                    android:contentDescription="@string/default_content_description"
+                    android:src="@drawable/ic_email" />
+
+                <ImageButton
+                    android:id="@+id/visit_website_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dip"
+                    android:background="@null"
+                    android:contentDescription="@string/default_content_description"
+                    android:src="@drawable/ic_url" />
+
+                <ImageButton
+                    android:id="@+id/comment_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dip"
+                    android:background="@null"
+                    android:contentDescription="@string/default_content_description"
+                    android:src="@drawable/ic_comment" />
+
+                <ImageButton
+                    android:id="@+id/rateme_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:contentDescription="@string/default_content_description"
+                    android:src="@drawable/ic_rate" />
+            </LinearLayout>
+        </ScrollView>
+        
+         <ScrollView
+            android:id="@+id/detail_content_scrolbar"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:background="@null" >
+
+            <LinearLayout
+                android:id="@+id/details_content_display"
+                style="@style/detailDisplayContent">
+
+                <LinearLayout
+                    android:id="@+id/buddy_name_tagline_dv"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/details_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal|center"
+                        android:layout_marginLeft="5dp"
+                        android:text="@string/default_detail_name"
+                        android:textColor="@color/default_white"
+                        android:textSize="@dimen/details_name_font_size"
+                        android:textStyle="bold"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/details_tagline"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal|center"
+                        android:text="@string/default_detail_tagline"
+                        android:textColor="@color/default_detail_text_color"
+                        android:textSize="@dimen/default_detail_text_font_size"
+                        android:textStyle="bold"
+                        android:typeface="normal"
+                        android:width="0dip" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/details_address_dv"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal|center"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/detail_buddy_content_text_background"
+                    android:orientation="vertical"
+                    android:padding="5dp" >
+
+                    <TextView
+                        android:id="@+id/details_address_banner_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/default_detail_address_banner"
+                        android:textColor="@color/default_detail_address_banner_color"
+                        android:textSize="@dimen/default_detail_banner_font_size"
+                        android:textStyle="bold"
+                        android:typeface="normal" />
+
+                    <TextView
+                        android:id="@+id/details_addresss"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/default_detail_address_text"
+                        android:textColor="@color/default_detail_text_color"
+                        android:textSize="@dimen/default_detail_font_size"
+                        android:textStyle="bold"
+                        android:typeface="normal"
+                        android:width="0dip" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/details_telphone_dv"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal|center"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/detail_buddy_content_text_background"
+                    android:orientation="vertical"
+                    android:padding="5dp" >
+
+                    <TextView
+                        android:id="@+id/details_telphone_banner_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/default_detail_telphone_banner"
+                        android:textColor="@color/default_detail_address_banner_color"
+                        android:textSize="@dimen/default_detail_banner_font_size"
+                        android:textStyle="bold"
+                        android:typeface="normal" />
+
+                    <TextView
+                        android:id="@+id/details_telphone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/default_detail_telphone_text"
+                        android:textColor="@color/default_detail_text_color"
+                        android:textSize="@dimen/default_detail_font_size"
+                        android:textStyle="bold"
+                        android:typeface="normal"
+                        android:width="0dip" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/details_fax_dv"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal|center"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/detail_buddy_content_text_background"
+                    android:orientation="vertical"
+                    android:padding="5dp" >
+
+                    <TextView
+                        android:id="@+id/details_fax_banner_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/default_detail_fax_banner"
+                        android:textColor="@color/default_detail_address_banner_color"
+                        android:textSize="@dimen/default_detail_banner_font_size"
+                        android:textStyle="bold"
+                        android:typeface="normal" />
+
+                    <TextView
+                        android:id="@+id/details_fax"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/default_detail_fax_text"
+                        android:textColor="@color/default_detail_text_color"
+                        android:textSize="@dimen/default_detail_font_size"
+                        android:textStyle="bold"
+                        android:typeface="normal"
+                        android:width="0dip" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/details_url_dv"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal|center"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/detail_buddy_content_text_background"
+                    android:orientation="vertical"
+                    android:padding="5dp" >
+
+                    <TextView
+                        android:id="@+id/details_url_banner_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/default_detail_url_banner"
+                        android:textColor="@color/default_detail_address_banner_color"
+                        android:textSize="@dimen/default_detail_banner_font_size"
+                        android:textStyle="bold"
+                        android:typeface="normal" />
+
+                    <TextView
+                        android:id="@+id/details_url"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/default_detail_url_text"
+                        android:textColor="@color/default_detail_text_color"
+                        android:textSize="@dimen/default_detail_font_size"
+                        android:textStyle="bold"
+                        android:typeface="normal"
+                        android:width="0dip" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/details_email_dv"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal|center"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/detail_buddy_content_text_background"
+                    android:orientation="vertical"
+                    android:padding="5dp" >
+
+                    <TextView
+                        android:id="@+id/details_email_banner_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/default_detail_email_banner"
+                        android:textColor="@color/default_detail_address_banner_color"
+                        android:textSize="@dimen/default_detail_banner_font_size"
+                        android:textStyle="bold"
+                        android:typeface="normal" />
+
+                    <TextView
+                        android:id="@+id/details_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/default_detail_email_text"
+                        android:textColor="@color/default_detail_text_color"
+                        android:textSize="@dimen/default_detail_font_size"
+                        android:textStyle="bold"
+                        android:typeface="normal"
+                        android:width="0dip" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/details_location_dv"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal|center"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/detail_buddy_content_text_background"
+                    android:orientation="vertical"
+                    android:padding="5dp" >
+
+                    <TextView
+                        android:id="@+id/details_location_banner_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/default_detail_location_banner"
+                        android:textColor="@color/default_detail_address_banner_color"
+                        android:textSize="@dimen/default_detail_banner_font_size"
+                        android:textStyle="bold"
+                        android:typeface="normal" />
+
+                    <TextView
+                        android:id="@+id/details_location"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/default_detail_location_text"
+                        android:textColor="@color/default_detail_text_color"
+                        android:textSize="@dimen/default_detail_font_size"
+                        android:textStyle="bold"
+                        android:typeface="normal"
+                        android:width="0dip" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</RelativeLayout>

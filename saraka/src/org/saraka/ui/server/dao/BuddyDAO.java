@@ -145,7 +145,7 @@ public class BuddyDAO extends BaseDAO {
 
 		Cursor cursor = db.query(BUDDY_TABLE, new String[] { "id", "name",
 				"tagline", "address", "telphone", "email", "fax", "url",
-				"dashboard_category_id, seed, image_name" }, "name = ?",
+				"dashboard_category_id, seed" }, "name = ?",
 				new String[] { String.valueOf(buddyName) }, null, null, null);
 		Buddy buddy = null;
 		if (cursor != null) {
@@ -154,8 +154,8 @@ public class BuddyDAO extends BaseDAO {
 						cursor.getString(1), cursor.getString(2),
 						cursor.getString(5), cursor.getString(4),
 						cursor.getString(7), cursor.getString(6),
-						cursor.getString(3), cursor.getString(7),
-						cursor.getString(8));
+						cursor.getString(3), cursor.getString(8),
+						cursor.getString(9));
 			}
 		}
 
@@ -382,7 +382,7 @@ public class BuddyDAO extends BaseDAO {
 
 		Cursor cursor = db.query(BUDDY_TABLE, new String[] { "id", "name",
 				"tagline", "address", "telphone", "email", "fax", "url",
-				"dashboard_category_id, seed, image_name" }, "id = ?",
+				"dashboard_category_id, seed" }, "id = ?",
 				new String[] { String.valueOf(id) }, null, null, null);
 		Buddy buddy = null;
 		if (cursor != null) {
@@ -391,8 +391,8 @@ public class BuddyDAO extends BaseDAO {
 						cursor.getString(1), cursor.getString(2),
 						cursor.getString(5), cursor.getString(4),
 						cursor.getString(7), cursor.getString(6),
-						cursor.getString(3), cursor.getString(7),
-						cursor.getString(8));
+						cursor.getString(3), cursor.getString(8),
+						cursor.getString(9));
 			}
 		}
 
@@ -436,6 +436,10 @@ public class BuddyDAO extends BaseDAO {
 		cursor.close();
 		this.dbClose(db);
 		return buddySearchTag;
+	}
+
+	public List<BuddyLocation> getAllBuddyLocationsByBuddyId(int buddyId) {
+		return null;
 	}
 
 }

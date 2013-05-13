@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import org.saraka.ui.common.DashboardCategoryDialog;
+import org.saraka.ui.common.SarakaDialog;
 import org.saraka.ui.common.SharedPreferencesCompat;
 import org.saraka.ui.common.Utils;
 import org.saraka.ui.model.Buddy;
 import org.saraka.ui.model.DashBoard;
 import org.saraka.ui.model.DashboardCategory;
 import org.saraka.ui.server.service.BuddyService;
-import org.saraka.ui.server.service.DashboardCategoryPositiveListener;
+import org.saraka.ui.server.service.SarakaPositiveListener;
 import org.saraka.ui.server.service.DashboardCategoryService;
 import org.saraka.ui.server.service.DashboardService;
 import org.saraka.ui.server.service.SearchService;
@@ -42,7 +42,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 public class DashboardUI extends BaseUI implements OnItemClickListener,
-		TextWatcher, DashboardCategoryPositiveListener {
+		TextWatcher, SarakaPositiveListener {
 
 	private SharedPreferences sharedPrefs;
 	private ListView dashboardListView;
@@ -186,9 +186,9 @@ public class DashboardUI extends BaseUI implements OnItemClickListener,
 				dashboardCategories[i] = dCategoryList.get(i).getCategoryName();
 			}
 			FragmentManager manager = getSupportFragmentManager();
-			DashboardCategoryDialog alert = new DashboardCategoryDialog(
+			SarakaDialog alert = new SarakaDialog(
 					dashboardCategories, selectedDashboard.getName()
-							+ " Listing", "view");
+							+ " Listing", "view", RADIO_DIALOG_DASHBOARDCATEGORY);
 
 			Bundle bundle = new Bundle();
 			bundle.putInt("position", position);
@@ -217,7 +217,7 @@ public class DashboardUI extends BaseUI implements OnItemClickListener,
 	}
 
 	@Override
-	public void onPositiveClick(int position) {
+	public void onPositiveClick(int position, int name) {
 		if (dashboardCategories != null) {
 			String categoryName = dashboardCategories[position];
 			DashboardCategory dashboardCategory = dashboardCategoryService
@@ -230,8 +230,7 @@ public class DashboardUI extends BaseUI implements OnItemClickListener,
 			Collections.sort(buddies);
 
 			if (!buddies.isEmpty()) {
-				Intent intent = new Intent(DashboardUI.this, /* ListingUI.class */
-						null);
+				Intent intent = new Intent(DashboardUI.this, ListingUI.class);
 				Bundle bundle = new Bundle();
 				bundle.putString(Utils.PAGE_NAME, dashboardCategories[position]);
 				bundle.putParcelableArrayList(Utils.BUDDY_LISTING,

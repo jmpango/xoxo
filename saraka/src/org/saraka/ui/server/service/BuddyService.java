@@ -32,4 +32,5 @@ public interface BuddyService {
 	public Buddy getBuddyById(int id);
 	public BuddyLocation getBuddyLocationById(int id);
 	public BuddySearchTag getBuddySearchTagById(int id);
+	public List<BuddyLocation> getAllBuddyLocationsByBuddyId(int buddyId);
 }

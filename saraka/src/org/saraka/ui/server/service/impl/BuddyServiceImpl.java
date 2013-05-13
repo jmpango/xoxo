@@ -132,4 +132,9 @@ public class BuddyServiceImpl implements BuddyService{
 	public BuddySearchTag getBuddySearchTagById(int id) {
 		return buddyDAO.getBuddySearchTagById(id);
 	}
+
+	@Override
+	public List<BuddyLocation> getAllBuddyLocationsByBuddyId(int buddyId) {
+		return buddyDAO.getAllBuddyLocationsByBuddyId(buddyId);
+	}
 }

@@ -28,4 +28,22 @@
 	<string name="advert_title_text">ads</string>
 	<string name="default_listing_item_name">Fang Fang Restuarant</string>
 	<string name="default_listing_item_tagline">Best Quality Food.</string>
+	<string name="default_detail_name">ACCACIA APARTMENTS</string>
+	<string name="default_detail_tagline">Home is near home</string>
+	<string name="default_detail_address_banner">Address:</string>
+	<string name="default_detail_address_text">Plot 3A Accacia Avenue, 48 Windsor Crescent Kololo, Kampala</string>
+	<string name="default_detail_telphone_banner">Telphone(s):</string>
+	<string name="default_detail_telphone_text">(+256)705445655,437655886</string>
+	<string name="default_detail_fax_banner">Fax:</string>
+	<string name="default_detail_fax_text">00001000000</string>
+	<string name="default_detail_url_banner">Url</string>
+	<string name="default_detail_url_text">www.accaciaapartments.co.ug</string>
+	<string name="default_detail_email_banner">Email:</string>
+	<string name="default_detail_email_text">info@accaciaapartment.co.ug</string>
+	<string name="default_detail_location_banner">Location:</string>
+	<string name="default_detail_location_text">Kampala, Wampewo</string>
+	<string name="default_email_subject_text">Subject:</string>
+    <string name="default_email_text">Message</string>
+    <string name="email_send_btn_text">Send</string>
+    <string name="cancel_btn_text">Cancel</string>
 </resources>

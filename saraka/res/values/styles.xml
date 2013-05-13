@@ -74,7 +74,7 @@
     <!-- Navigation Page Name -->
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <style name="NavigationPageLabel">
-        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_width">@dimen/nav_text_width</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginLeft">3dp</item>
         <item name="android:layout_marginRight">5dp</item>
@@ -82,6 +82,7 @@
         <item name="android:textSize">@dimen/page_font_size</item>
         <item name="android:textStyle">bold</item>
         <item name="android:typeface">sans</item>
+        <item name="android:width">0dip</item>
     </style>
 
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -171,7 +172,7 @@
         <item name="android:textSize">@dimen/update_title_size</item>
         <item name="android:layout_margin">5dp</item>
     </style>
-    
+
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <!-- Advert Div Properties -->
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -184,7 +185,7 @@
         <item name="android:orientation">vertical</item>
         <item name="android:background">@color/advert_bg_color</item>
     </style>
-    
+
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <!-- Advert Title Properties -->
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -195,5 +196,52 @@
         <item name="android:textSize">@dimen/advert_text_size</item>
         <item name="android:text">@string/advert_title_text</item>
         <item name="android:layout_margin">5dp</item>
+    </style>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- Buddy Image Properties -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <style name="buddyImage">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">@dimen/default_detail_image_height</item>
+        <item name="android:background">@drawable/detail_buddy_image_background</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:layout_below">@+id/navigation_bar</item>
+    </style>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- Detail's Content Properties -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <style name="detailContent">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@drawable/list_selector_background</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:layout_below">@+id/buddy_image_div</item>
+    </style>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- Detail's Icon Properties -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <style name="detailIcons">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:background">@null</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">5dp</item>
+    </style>
+
+    
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- Detail's Content Display Properties -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <style name="detailDisplayContent">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:background">@drawable/detail_buddy_content_background</item>
     </style>
 </resources>
