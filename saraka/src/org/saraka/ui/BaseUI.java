@@ -1,7 +1,10 @@
 package org.saraka.ui;
 
+import java.util.Date;
+
 import org.saraka.ui.common.Utils;
 import org.saraka.ui.model.Buddy;
+import org.saraka.ui.model.Comment;
 import org.saraka.ui.server.service.UsageService;
 
 import android.app.AlertDialog;
@@ -23,7 +26,7 @@ public class BaseUI extends FragmentActivity {
 	public static final int DIALOG_WELCOME = 1;
 	public static final int DIALOG_EMAIL = 2;
 	public static final int DIALOG_COMMENT = 3;
-	
+
 	public static final int RADIO_DIALOG_DASHBOARDCATEGORY = 1;
 	public static final int RADIO_DIALOG_CALL = 2;
 	public static final int RADIO_DIALOG_RATE = 3;
@@ -66,8 +69,14 @@ public class BaseUI extends FragmentActivity {
 			emailbuilder.setView(dialogview);
 			return emailbuilder.create();
 		case DIALOG_COMMENT:
-			//TODO complement this method.
-			return null;
+			LayoutInflater commentInflater = LayoutInflater.from(this);
+			View commentDialogview = commentInflater.inflate(R.layout.comment_dialog_layout,
+					null);
+			AlertDialog.Builder commentbuilder = new AlertDialog.Builder(this);
+
+			commentbuilder.setTitle("Comment for: " + detailedPageBuddy.getName());
+			commentbuilder.setView(commentDialogview);
+			return commentbuilder.create();
 		default:
 			return super.onCreateDialog(id);
 		}
@@ -101,15 +110,18 @@ public class BaseUI extends FragmentActivity {
 
 					email.setType("message/rfc822");
 					try {
-						usageService.saveEmailHit(detailedPageBuddy.getId());
 						startActivity(Intent.createChooser(email,
 								"Choose an Email client :"));
+						Utils.showToast(BaseUI.this, "Email sent to "
+								+ detailedPageBuddy.getEmail());
+						usageService.saveEmailHit(detailedPageBuddy.getId());
 					} catch (android.content.ActivityNotFoundException ex) {
-						Utils.showToast(BaseUI.this, "There are no email clients installed.");
+						Utils.showToast(BaseUI.this,
+								"There are no email clients installed.");
+						alertDialog.dismiss();
 					}
 
 					alertDialog.dismiss();
-					Utils.showToast(BaseUI.this, "Email sent to " + detailedPageBuddy.getEmail());
 				}
 			});
 
@@ -122,9 +134,41 @@ public class BaseUI extends FragmentActivity {
 			});
 			break;
 		case DIALOG_COMMENT:
-			//TODO implement the comment form
-			
-			usageService.saveCommentHit(detailedPageBuddy.getId());
+			final AlertDialog commentAlert = (AlertDialog) dialog;
+			Button saveCommentButton = (Button) commentAlert
+					.findViewById(R.id.comment_btn_send);
+			Button cancelCommentButton = (Button) commentAlert
+					.findViewById(R.id.comment_btn_cancel);
+			final EditText ownerTxt = (EditText) commentAlert
+					.findViewById(R.id.txtowner);
+			final EditText commentTxt = (EditText) commentAlert
+					.findViewById(R.id.txtcomment);
+			saveCommentButton.setOnClickListener(new View.OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+					String owner = ownerTxt.getText().toString();
+					String comment = commentTxt.getText().toString();
+					
+					if(owner.equals("") || owner == null || comment.equals("") || comment == null ){
+						commentAlert.dismiss();
+						Utils.showToast(BaseUI.this, "Comment NOT saved. Both comment and your name are required.");
+					}else{
+						usageService.saveComment(new Comment(0, comment, owner, new Date() + "", detailedPageBuddy.getId()));
+						usageService.saveCommentHit(detailedPageBuddy.getId());
+						commentAlert.dismiss();
+						Utils.showToast(BaseUI.this, "Thank you! Comment Saved.");
+					}
+				}
+			});
+
+			cancelCommentButton.setOnClickListener(new View.OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+					commentAlert.dismiss();
+				}
+			});
 			break;
 		}
 	}

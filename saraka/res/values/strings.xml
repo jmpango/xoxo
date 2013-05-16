@@ -43,7 +43,10 @@
 	<string name="default_detail_location_banner">Location:</string>
 	<string name="default_detail_location_text">Kampala, Wampewo</string>
 	<string name="default_email_subject_text">Subject:</string>
-    <string name="default_email_text">Message</string>
+    <string name="default_email_text">Message:</string>
     <string name="email_send_btn_text">Send</string>
     <string name="cancel_btn_text">Cancel</string>
+    <string name="default_owner_text">Your name:</string>
+    <string name="default_comment_text">Comment:</string>
+    <string name="comment_send_btn_text">Send</string>
 </resources>

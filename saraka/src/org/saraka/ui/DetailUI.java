@@ -100,7 +100,7 @@ public class DetailUI extends BaseUI implements SarakaPositiveListener {
 
 		BuddyService buddyService = new BuddyServiceImpl(DetailUI.this);
 		List<BuddyLocation> locations = buddyService
-				.getAllBuddyLocationsByBuddyId(detailedPageBuddy.getId());
+				.getBuddyLocationsByBuddyId(detailedPageBuddy.getId() + "");
 
 		if (!locations.isEmpty()) {
 			String locationString = "";
@@ -273,7 +273,8 @@ public class DetailUI extends BaseUI implements SarakaPositiveListener {
 			break;
 		case RADIO_DIALOG_RATE:
 			String selectedRate = ratings[position];
-			Rate rate = new Rate(0, Integer.parseInt(selectedRate), detailedPageBuddy.getId());
+			Rate rate = new Rate(0, Integer.parseInt(selectedRate),
+					detailedPageBuddy.getId());
 			usageService.saveRate(rate);
 			usageService.saveRateHit(detailedPageBuddy.getId());
 			Utils.showToast(DetailUI.this, "Thank you for rating me. "

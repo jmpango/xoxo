@@ -22,8 +22,10 @@ import org.saraka.ui.common.Utils;
 import org.saraka.ui.model.Buddy;
 import org.saraka.ui.model.BuddyLocation;
 import org.saraka.ui.model.BuddySearchTag;
+import org.saraka.ui.model.Comment;
 import org.saraka.ui.model.DashBoard;
 import org.saraka.ui.model.DashboardCategory;
+import org.saraka.ui.model.Rate;
 import org.saraka.ui.model.Usage;
 import org.saraka.ui.server.service.BuddyService;
 import org.saraka.ui.server.service.DashboardCategoryService;
@@ -126,11 +128,17 @@ public class UpdateUI extends BaseUI {
 		protected Void doInBackground(Void... args) {
 			try {
 				submitUsage();
+				Utils.d("Saraka>> ", "Done submitting Usage");
 				downloadBuddySearchTags();
+				Utils.d("Saraka>> ", "Done submitting Usage");
 				downloadBuddyLocations();
+				Utils.d("Saraka>> ", "Done submitting Locations");
 				downloadBuddies();
+				Utils.d("Saraka>> ", "Done submitting Buddies");
 				downloadDashboardCategory();
+				Utils.d("Saraka>> ", "Done submitting DashboardCategories");
 				downloadDashboard();
+				Utils.d("Saraka>> ", "Done submitting Dashboard");
 			} catch (final Exception e) {
 				noErrorThrown = true;
 				runOnUiThread(new Runnable() {
@@ -150,13 +158,21 @@ public class UpdateUI extends BaseUI {
 		private void submitUsage() throws IllegalStateException, IOException,
 				JSONException {
 			List<Usage> usages = usageService.getAllUsage();
+			List<Rate> rates = usageService.getRate();
+			List<Comment> comments = usageService.getComments();
+			
 			incremental = 0;
 			incremental += 5;
 			publishProgress(incremental);
+			
+			JSONObject jsonObj = new JSONObject();
+			JSONArray usageJsonArray = new JSONArray();
+			JSONArray rateJsonArray = new JSONArray();
+			JSONArray commentJsonArray = new JSONArray();
+			
+			List<NameValuePair> params = new ArrayList<NameValuePair>();
+			
 			if (!usages.isEmpty()) {
-				List<NameValuePair> params = new ArrayList<NameValuePair>();
-				JSONObject jsonObj = new JSONObject();
-				JSONArray jsonArray = new JSONArray();
 				for (Usage usage : usages) {
 					JSONObject childObj = new JSONObject();
 					childObj.put("pageHit", usage.getPageHits() + "");
@@ -167,17 +183,40 @@ public class UpdateUI extends BaseUI {
 					childObj.put("rateHit", usage.getRateHits() + "");
 					childObj.put("buddyId", usage.getBuddyId() + "");
 
-					jsonArray.put(childObj);
+					usageJsonArray.put(childObj);
 				}
-				jsonObj.put("usages", jsonArray);
-
-				params.add(new BasicNameValuePair("hits", jsonObj.toString()));
-				makeHttpRequest(Utils.SERVER_URL + "usage", "POST", params);
-				incremental += 10;
-				publishProgress(incremental);
-				usageService.clearUsage();
-				incremental += 1;
 			}
+			
+			if (!rates.isEmpty()) {
+				for (Rate rate : rates) {
+					JSONObject rateChildObj = new JSONObject();
+					rateChildObj.put("rate", rate.getRate() + "");
+					rateChildObj.put("buddyId", rate.getBuddyId() + "");
+
+					rateJsonArray.put(rateChildObj);
+				}
+			}
+			
+			if (!comments.isEmpty()) {
+				for (Comment comment : comments) {
+					JSONObject commentChildObj = new JSONObject();
+					commentChildObj.put("comment", comment.getComment() + "");
+					commentChildObj.put("owner", comment.getOwner() + "");
+					commentChildObj.put("postedDate", comment.getPostedDate() + "");
+					commentChildObj.put("buddyId", comment.getBuddyId() + "");
+
+					commentJsonArray.put(commentChildObj);
+				}
+			}
+			
+			jsonObj.put("usages", usageJsonArray);
+
+			params.add(new BasicNameValuePair("hits", jsonObj.toString()));
+			makeHttpRequest(Utils.SERVER_URL + "usage", "POST", params);
+			incremental += 10;
+			publishProgress(incremental);
+			usageService.clearUsage();
+			incremental += 1;
 		}
 
 		private void downloadBuddySearchTags() throws IllegalStateException,

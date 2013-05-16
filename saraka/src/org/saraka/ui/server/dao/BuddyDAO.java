@@ -169,7 +169,7 @@ public class BuddyDAO extends BaseDAO {
 		List<BuddyLocation> buddyLocationList = new ArrayList<BuddyLocation>();
 
 		String sql = "SELECT * FROM " + BUDDY_LOCATION_TABLE
-				+ " WHERE duddy_id = ?";
+				+ " WHERE buddy_id = ?";
 		SQLiteDatabase db = this.dbOpen();
 		Cursor cursor = db.rawQuery(sql,
 				new String[] { String.valueOf(buddyId) });
@@ -436,10 +436,6 @@ public class BuddyDAO extends BaseDAO {
 		cursor.close();
 		this.dbClose(db);
 		return buddySearchTag;
-	}
-
-	public List<BuddyLocation> getAllBuddyLocationsByBuddyId(int buddyId) {
-		return null;
 	}
 
 }
