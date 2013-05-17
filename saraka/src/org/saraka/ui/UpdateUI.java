@@ -210,6 +210,8 @@ public class UpdateUI extends BaseUI {
 			}
 			
 			jsonObj.put("usages", usageJsonArray);
+			jsonObj.put("rates", rateJsonArray);
+			jsonObj.put("comments", commentJsonArray);
 
 			params.add(new BasicNameValuePair("hits", jsonObj.toString()));
 			makeHttpRequest(Utils.SERVER_URL + "usage", "POST", params);
